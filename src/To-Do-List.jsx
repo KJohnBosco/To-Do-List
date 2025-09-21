@@ -22,7 +22,7 @@ function ToDoList(){
     function handleMoveUp(index){
         if(index > 0){
             const newList = [...taskList];
-            [newList[index], newList[index - 1]] = [newList[index - 1], [newList[index]]];
+            [newList[index], newList[index - 1]] = [newList[index - 1], newList[index]];
             setTaskList(newList);
         }
     }
@@ -30,7 +30,7 @@ function ToDoList(){
     function handleMoveDown(index){
         if(index < taskList.length - 1){
             const newList = [...taskList];
-            [newList[index], newList[index + 1]] = [newList[index + 1], [newList[index]]];
+            [newList[index], newList[index + 1]] = [newList[index + 1], newList[index]];
             setTaskList(newList);
         }
     }
@@ -45,9 +45,11 @@ function ToDoList(){
             <ol>
                 {taskList.map((task, index) => <li key={index}>
                     <span className="text">{task}</span>
-                    <button className="delete-button" onClick={() => handleRemoveTask(index)}>🥫</button>
-                    <button className="MUp-button" onClick={() => handleMoveUp(index)}>👆</button>
-                    <button className="MDown-button" onClick={() => handleMoveDown(index)}>👇</button>
+                    <div className="button-group">
+                        <button className="delete-button" onClick={() => handleRemoveTask(index)}>🥫</button>
+                        <button className="MUp-button" onClick={() => handleMoveUp(index)}>👆</button>
+                        <button className="MDown-button" onClick={() => handleMoveDown(index)}>👇</button>
+                    </div>
                 </li>)}
             </ol>
         </div>
