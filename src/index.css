@@ -6,6 +6,17 @@ h1{
     font-family: arial, sans-serif;
     font-size: 4rem;
     font-weight: 800;
+    margin-bottom: 0px;
+}
+
+h3{
+    margin-top: 0px;
+}
+
+.count{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .to-do-list{

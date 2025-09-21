@@ -2,7 +2,7 @@ import React, {useState} from "react"
 
 function ToDoList(){
 
-    const [taskList, setTaskList] = useState([]);
+    const [taskList, setTaskList] = useState([])
     const [task, setTask] = useState("")
 
     function handleAddTask(){
@@ -35,9 +35,11 @@ function ToDoList(){
         }
     }
 
+
     return(
         <div className="to-do-list">
             <h1>To Do List</h1>
+            <h3><span className="count">{taskList.length} Tasks</span></h3>
             <input type="text" value={task} onChange={handleInputChange} placeholder="Enter new task"/>
             <button onClick={handleAddTask} className="add-button">Add</button>
             <ol>
